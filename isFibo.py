@@ -6,19 +6,28 @@ def isFibo(test):
 	else:
 		return False
 
-def nextFibo(fibo):
+def seqFibo(fibo):
 	fiboLast = 0
 	for n in range(1,fibo):
 		if isFibo(fibo - n):
 			fiboLast = fibo-n
 			return fibo + fiboLast
+def nextFibo(test):
+	counter = test
+	while counter > 0:
+		if isFibo(counter):
+			return counter
+		counter -= 1
 
-while raw_input('Continue? ') != 'N\n' or 'n\n':
+while not str(raw_input("Press 'n' to exit.")):
 	try:
+		print 
 		test = int(raw_input('Enter a number to find the next Fibonacci number '))
 		if type(test) == int: 
 			if isFibo(test):
-				print test, "is in the fibonacci sequence, and", nextFibo(test), "is it's successor!"
+				print test, "is in the fibonacci sequence, and", seqFibo(test), "is it's successor!"
+			else:
+				print test, "is not a fibonacci number", nextFibo(test), "is the highest Fibonacci number less than",test
 		else:
 			print test, "Is not a number"
 	except:
