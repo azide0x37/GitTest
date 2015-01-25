@@ -19,6 +19,13 @@ def nextFibo(test):
 			return counter
 		counter -= 1
 
+def prevFibo(test):
+	counter = 0
+	while counter >= (test):
+		if isFibo(counter):
+			return counter
+		counter += 1
+		
 while not str(raw_input("Press 'n' to exit.")):
 	try:
 		print 
